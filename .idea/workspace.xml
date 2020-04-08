@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="d4b0d4e7-5a2a-4834-b03e-972ff55b09bf" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Support/Env.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Support/Env.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -232,7 +231,9 @@
       <workItem from="1585867877575" duration="13476000" />
       <workItem from="1586002927338" duration="14205000" />
       <workItem from="1586127111968" duration="40352000" />
-      <workItem from="1586290954444" duration="33392000" />
+      <workItem from="1586290954444" duration="33629000" />
+      <workItem from="1586368610617" duration="30000" />
+      <workItem from="1586370269685" duration="28000" />
     </task>
     <servers />
   </component>
