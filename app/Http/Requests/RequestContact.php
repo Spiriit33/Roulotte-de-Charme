@@ -28,6 +28,7 @@ class RequestContact extends FormRequest
             'email'=>'email|required|max:255',
             'objet'=>'required|max:255|string',
             'message'=>'required',
+            'g-recaptcha-response => required|captcha,'
         ];
     }
 }

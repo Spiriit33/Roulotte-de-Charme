@@ -30,6 +30,7 @@ class RequestReservation extends FormRequest
             'email'=>'required|email|max:255',
             'commentaire'=>'required',
             'nombre_personnes'=>'required',
+            'g-recaptcha-response' => 'required|captcha',
         ];
     }
 }

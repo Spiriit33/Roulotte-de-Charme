@@ -23,7 +23,11 @@
                     locale : 'fr',
                     events: '/reservations',
                     selectable: true,
+                    displayEventTime : false,
                     selectHelper: true,
+                    eventRender: function(event, element) {
+                        element.find('.fc-title').html('Client :'+ event.name);
+                    },
                     eventClick: function (event) {
                         $.ajax({
                             headers: {
@@ -33,6 +37,7 @@
                             url: '/administration/reservations/' + event.id,
 
                             type: "GET",
+
                             success:function(data){
                                 if(data && data.length) {
                                     var date_debut = $('#date_debut');
@@ -71,6 +76,7 @@
                         })
                         });
                         }
+
 
                 });
                 $('#addreservation').click(function () {
@@ -136,8 +142,8 @@
                     </div>
                     <div id="modalBody" class="modal-body">
                         <div class="form-group">
-                            <label class="col-form-label col-form-label">Date de début</label>
-                            <input type="date" class="form-control form-control-sm @error('date_debut') is is-invalid @endif" id="date_debut" name="date_debut" value="{{old('date_debut')}}">
+                            <label class="col-form-label col-form-label">Date de début <span class="red">*</span> </label>
+                            <input type="date" class="form-control form-control-sm @error('date_debut') is is-invalid @endif" id="date_debut" name="date_debut" value="{{old('date_debut')}}" required>
                             @error('date_debut')
                             <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -145,8 +151,8 @@
                             @enderror
                         </div>
                         <div class="form-group">
-                            <label class="col-form-label col-form-label">Date de fin</label>
-                            <input type="date" class="form-control form-control-sm @error('date_fin') is is-invalid @endif" value="{{old('date_fin')}}" name="date_fin" id="date_fin">
+                            <label class="col-form-label col-form-label">Date de fin <span class="red">*</span> </label>
+                            <input type="date" class="form-control form-control-sm @error('date_fin') is is-invalid @endif" value="{{old('date_fin')}}" name="date_fin" id="date_fin" required>
                             @error('date_fin')
                             <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>

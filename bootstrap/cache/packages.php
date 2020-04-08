@@ -1,4 +1,26 @@
 <?php return array (
+  'anhskohbo/no-captcha' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'Anhskohbo\\NoCaptcha\\NoCaptchaServiceProvider',
+    ),
+    'aliases' => 
+    array (
+      'NoCaptcha' => 'Anhskohbo\\NoCaptcha\\Facades\\NoCaptcha',
+    ),
+  ),
+  'barryvdh/laravel-debugbar' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'Barryvdh\\Debugbar\\ServiceProvider',
+    ),
+    'aliases' => 
+    array (
+      'Debugbar' => 'Barryvdh\\Debugbar\\Facade',
+    ),
+  ),
   'davejamesmiller/laravel-breadcrumbs' => 
   array (
     'providers' => 
@@ -26,6 +48,13 @@
     'providers' => 
     array (
       0 => 'Fideloper\\Proxy\\TrustedProxyServiceProvider',
+    ),
+  ),
+  'genealabs/laravel-model-caching' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'GeneaLabs\\LaravelModelCaching\\Providers\\Service',
     ),
   ),
   'laravel/tinker' => 

@@ -42,8 +42,8 @@ class NotificationContact extends Notification
     public function toMail($notifiable)
     {
         return (new MailMessage)
-                    ->subject('Recrutement PC-HS')
-                    ->from('pc-hs@gmail.com','Jean-Francois Chadeyron')
+                    ->subject($this->contact->subject)
+                    ->from($this->contact->email,$this->contact->name)
                     ->greeting('Bonjour,')
                     ->line('Vous avez reçu un nouveau message.')
                     ->line('Sujet : '.$this->contact->objet.'')

@@ -100,7 +100,7 @@ font-size: 14px;
 border: 2px solid #ddd;"></i></div>
                     <div class="text d-inline-block float-right">
                         <p class="mb-0"><b>Pour se baigner :</b></p>
-                        <p class="mb-0 font-weight-light">Profitez de la piscine chauffé.</p>
+                        <p class="mb-0 font-weight-light">Profitez de la piscine chauffée.</p>
                     </div>
                 </div>
                 <a href="<?php echo e(route('situer_roulotte')); ?>"><button type="submit" class="btn btn-primary">Situer la roulotte</button></a>
@@ -115,9 +115,9 @@ border: 2px solid #ddd;"></i></div>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-                    <a class="nav nav-link" href="<?php echo e(route('home')); ?>">Acceuil</a>
+                    <a class="nav nav-link" href="<?php echo e(route('home')); ?>">Accueil</a>
                         <a class="nav nav-link" href="<?php echo e(route('roulotte')); ?>">La roulotte</a>
-                        <a class="nav nav-link" href="<?php echo e(route('tarifs_reservations')); ?>">Tarifs & Reservations</a>
+                        <a class="nav nav-link" href="<?php echo e(route('tarifs_reservations')); ?>">Tarifs & Réservations</a>
                         <a class="nav nav-link" href="<?php echo e(route('activités')); ?>">Activités</a>
                         <a class="nav nav-link" href="<?php echo e(route('contact')); ?>">Contact</a>
                         <?php if(\Illuminate\Support\Facades\Auth::check()): ?>
@@ -151,7 +151,7 @@ border: 2px solid #ddd;"></i></div>
     <footer class="page-footer font-small blue">
 
         <!-- Copyright -->
-        <div class="footer-copyright text-center py-3" style="color:white;">© <?php echo e(date('Y')); ?> Realisé par Pierre-Louis Giraud
+        <div class="footer-copyright text-center py-3" style="color:white;">© <?php echo e(date('Y')); ?> Réalisé par Pierre-Louis Giraud
         </div>
         <!-- Copyright -->
 

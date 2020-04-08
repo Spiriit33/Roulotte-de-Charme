@@ -7,17 +7,23 @@ p,td{
 a {
     color: #dc6334;
 }
+a:hover {
+   color: orange;
+    text-decoration: none;
+}
 h2 {
     text-transform: capitalize;
 }
 h4 {
-    text-transform: uppercase;
-    border-bottom: 1px solid orange;
-    margin-bottom: 6px;
+    text-transform: capitalize;
+    border-bottom: 1px solid #dc6334;
+    margin-bottom: 10px;
     padding-bottom: 5px;
 }
 .fas {
     color: #c84619;
+    text-decoration: unset;
+    border: none;
 }
 .breadcrumb {
     margin : 10px;
@@ -49,10 +55,21 @@ h4 {
         #fff;
 }
 .carousel-indicators {
-    bottom: 15px;
+    bottom: 0px;
 }
 .stats {
     margin-bottom: 20px;
+}
+.fc-title {
+    color: white;
+    font-weight: bold;
+}
+.page-item.active .page-link {
+    background-color: #dc6334;
+    border-color: #dc6334;
+}
+.page-link {
+    color: #dc6334;
 }
 footer {
     background: #343a40 !important;
@@ -63,3 +80,27 @@ footer {
         display: none;
     }
 }
+@media (max-width: 992px) {
+    .carousel-item img {
+        transform: translateY(0)!important;
+    }
+    .carousel-item .active img {
+        transform: none;
+    }
+    .wrap-text {
+        width: 100%;
+        position: absolute;
+        display: block;
+        bottom: 0!important;
+        background: rgba(69,123,157,0.8);
+    }
+    .overlay-home {
+        background: #003049;
+        padding: 10px!important;
+    }
+}
+.carousel-control-prev-icon, .carousel-control-next-icon {
+    width: 15px!important;
+    height: 15px!important;
+}
+

@@ -105,6 +105,19 @@ if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
             </div>
+                <?php
+                ?>
+                <div class="form-group col-md-6 col-sm-6">
+                    <?php echo NoCaptcha::renderJs(); ?>
+
+                <?php echo NoCaptcha::display(); ?>
+
+                <?php if($errors->has('g-recaptcha-response')): ?>
+                    <span class="help-block">
+        <strong><?php echo e($errors->first('g-recaptcha-response')); ?></strong>
+    </span>
+                <?php endif; ?>
+                </div>
             <div class="form-group row justify-content-center">
                 <button type="submit" class="btn btn-primary">Envoyer</button>
             </div>

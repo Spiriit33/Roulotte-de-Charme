@@ -6,7 +6,6 @@ use App\Configuration;
 use App\Http\Requests\RequestSiteTouristique;
 use App\Http\Requests\RequestUpdateSiteTouristique;
 use App\ImageRoulotte;
-use Illuminate\Http\Request;
 
 class RoulotteController extends Controller
 {

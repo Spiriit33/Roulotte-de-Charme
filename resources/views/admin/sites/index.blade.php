@@ -1,4 +1,7 @@
 @extends('layouts.app')
+@section('title')
+    Gestion des Sites Touristiques | La Roulotte de Charme
+    @stop
 @section('breadcrumbs')
     {{\DaveJamesMiller\Breadcrumbs\Facades\Breadcrumbs::render('manage_site_touristique')}}
     @stop

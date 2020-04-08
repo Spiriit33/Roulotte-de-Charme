@@ -1,11 +1,12 @@
 <?php
 // Home
 Breadcrumbs::for('home', function ($trail) {
-    $trail->push('Acceuil', route('home'));
+    $trail->push('Accueil', route('home'));
 });
 Breadcrumbs::for('roulotte', function ($trail) {
     $trail->parent('home');
-    $trail->push('Notre roulotte', route('contact'));
+    $trail->push('La Roulotte
+    ', route('contact'));
 });
 Breadcrumbs::for('contact', function ($trail) {
     $trail->parent('home');
@@ -21,7 +22,7 @@ Breadcrumbs::for('location', function ($trail) {
 });
 Breadcrumbs::for('tarifs-reservations', function ($trail) {
     $trail->parent('home');
-    $trail->push('Tarifs & Reservations', route('tarifs_reservations'));
+    $trail->push('Tarifs & Réservations', route('tarifs_reservations'));
 });
 Breadcrumbs::for('activités', function ($trail) {
     $trail->parent('home');

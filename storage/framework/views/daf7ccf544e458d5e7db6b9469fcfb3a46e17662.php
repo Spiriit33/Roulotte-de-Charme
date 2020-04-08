@@ -10,7 +10,7 @@
     <?php $__env->stopSection(); ?>
 <?php $__env->startSection('right-content'); ?>
     <h4 class="mb-4">Gerer la roulotte</h4>
-    <p>Ici, vous pouvez gerer les images de la roulotte présent sur la page roulotte.</p>
+    <p>Ici, vous pouvez gérer les images de la roulotte présents sur la page roulotte.</p>
     <ul class="nav nav-tabs" id="myTab" role="tablist">
         <?php
             $errors = session()->get('errors');

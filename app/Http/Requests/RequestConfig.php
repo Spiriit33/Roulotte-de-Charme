@@ -2,7 +2,9 @@
 
 namespace App\Http\Requests;
 
+use App\Rules\checkPassword;
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Support\Facades\Auth;
 
 class RequestConfig extends FormRequest
 {
@@ -31,6 +33,8 @@ class RequestConfig extends FormRequest
             'message_acceuil'=>'nullable',
             'images.*'=>'nullable|image|max:2048',
             'afficher_actu'=>'nullable',
+            'password'=>['nullable',new checkPassword(Auth::user()->username)],
+            'new_password'=>'nullable|confirmed|required_with:password',
         ];
     }
 }

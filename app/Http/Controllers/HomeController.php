@@ -3,10 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Configuration;
-use App\Reservation;
 use App\SliderHome;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
@@ -24,7 +22,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $sliders=SliderHome::get();
+        $sliders=SliderHome::orderBy('ID','DESC')->get();
         $configuration=Configuration::find(1);
         return view('home',compact('sliders','configuration'));
     }

@@ -14,7 +14,7 @@
         <div class="col-md-6 pl-0">
             <div class="stats w-100" style="height: 150px; background-color: orangered;">
                     <div class="text" style="position: absolute; top: 15px; left: 5px;">
-                        <span style="font-size: 20px; font-weight: bold; color: white;"><i class="fas fa-home" style="color: white;margin-right: 6px;
+                        <span style="font-size: 20px; font-weight: bold; color: white;"><i class="fas fa-chart-bar" style="color: white;margin-right: 6px;
 "></i>Reservations :</span>
                     </div>
                     <div style="position: absolute; bottom: 20px; right: 25px;">
@@ -25,7 +25,7 @@
         <div class="col-md-6 pl-0">
             <div class="stats w-100" style="height: 150px; background-color: #009fff;">
                 <div class="text" style="position: absolute; top: 15px; left: 5px;">
-                        <span style="font-size: 20px; font-weight: bold; color: white;"><i class="fas fa-home" style="color: white;margin-right: 6px;
+                        <span style="font-size: 20px; font-weight: bold; color: white;"><i class="fas fa-chart-bar" style="color: white;margin-right: 6px;
 "></i>Activités :</span>
                 </div>
                 <div style="position: absolute; bottom: 20px; right: 25px;">
@@ -36,7 +36,7 @@
         <div class="col-md-6 pl-0">
             <div class="stats w-100" style="height: 150px; background-color: #01c86b;">
                 <div class="text" style="position: absolute; top: 15px; left: 5px;">
-                        <span style="font-size: 20px; font-weight: bold; color: white;"><i class="fas fa-home" style="color: white;margin-right: 6px;
+                        <span style="font-size: 20px; font-weight: bold; color: white;"><i class="fas fa-chart-bar" style="color: white;margin-right: 6px;
 "></i>Sites touristiques :</span>
                 </div>
                 <div style="position: absolute; bottom: 20px; right: 25px;">
@@ -47,7 +47,7 @@
         <div class="col-md-6 pl-0">
             <div class="stats w-100" style="height: 150px; background-color: #af00ff;">
                 <div class="text" style="position: absolute; top: 15px; left: 5px;">
-                        <span style="font-size: 20px; font-weight: bold; color: white;"><i class="fas fa-home" style="color: white;margin-right: 6px;
+                        <span style="font-size: 20px; font-weight: bold; color: white;"><i class="fas fa-chart-bar" style="color: white;margin-right: 6px;
 "></i>Contact :</span>
                 </div>
                 <div style="position: absolute; bottom: 20px; right: 25px;">

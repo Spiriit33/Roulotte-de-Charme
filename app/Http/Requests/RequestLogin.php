@@ -2,7 +2,9 @@
 
 namespace App\Http\Requests;
 
+use App\Rules\checkPassword;
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Support\Facades\Auth;
 
 class RequestLogin extends FormRequest
 {
@@ -25,7 +27,7 @@ class RequestLogin extends FormRequest
     {
         return [
             'username'=>'required|exists:users,username',
-            'password'=>'required',
+            'password'=>['required',new checkPassword(request()->input('username'))],
         ];
     }
 }

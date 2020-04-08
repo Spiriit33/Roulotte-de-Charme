@@ -23,7 +23,11 @@
                     locale : 'fr',
                     events: '/reservations',
                     selectable: true,
+                    displayEventTime : false,
                     selectHelper: true,
+                    eventRender: function(event, element) {
+                        element.find('.fc-title').html('Client :'+ event.name);
+                    },
                     eventClick: function (event) {
                         $.ajax({
                             headers: {
@@ -33,6 +37,7 @@
                             url: '/administration/reservations/' + event.id,
 
                             type: "GET",
+
                             success:function(data){
                                 if(data && data.length) {
                                     var date_debut = $('#date_debut');
@@ -71,6 +76,7 @@
                         })
                         });
                         }
+
 
                 });
                 $('#addreservation').click(function () {
@@ -136,12 +142,12 @@
                     </div>
                     <div id="modalBody" class="modal-body">
                         <div class="form-group">
-                            <label class="col-form-label col-form-label">Date de début</label>
+                            <label class="col-form-label col-form-label">Date de début <span class="red">*</span> </label>
                             <input type="date" class="form-control form-control-sm <?php $__errorArgs = ['date_debut'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }
-$message = $__bag->first($__errorArgs[0]); ?> is is-invalid <?php endif; ?>" id="date_debut" name="date_debut" value="<?php echo e(old('date_debut')); ?>">
+$message = $__bag->first($__errorArgs[0]); ?> is is-invalid <?php endif; ?>" id="date_debut" name="date_debut" value="<?php echo e(old('date_debut')); ?>" required>
                             <?php $__errorArgs = ['date_debut'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -156,12 +162,12 @@ endif;
 unset($__errorArgs, $__bag); ?>
                         </div>
                         <div class="form-group">
-                            <label class="col-form-label col-form-label">Date de fin</label>
+                            <label class="col-form-label col-form-label">Date de fin <span class="red">*</span> </label>
                             <input type="date" class="form-control form-control-sm <?php $__errorArgs = ['date_fin'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }
-$message = $__bag->first($__errorArgs[0]); ?> is is-invalid <?php endif; ?>" value="<?php echo e(old('date_fin')); ?>" name="date_fin" id="date_fin">
+$message = $__bag->first($__errorArgs[0]); ?> is is-invalid <?php endif; ?>" value="<?php echo e(old('date_fin')); ?>" name="date_fin" id="date_fin" required>
                             <?php $__errorArgs = ['date_fin'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :

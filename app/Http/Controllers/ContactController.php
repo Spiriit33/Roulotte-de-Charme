@@ -10,13 +10,9 @@ use App\Http\Requests\RequestAnswerContact;
 use App\Http\Requests\RequestContact;
 use App\Mail\AnswerMail;
 use App\Notifications\NotificationContact;
-use App\User;
-use Illuminate\Http\Request;
-use Illuminate\Notifications\Notification;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
-use PharIo\Manifest\Email;
 
 class ContactController extends Controller
 {
@@ -54,7 +50,7 @@ class ContactController extends Controller
 
     }
     public function manage () {
-        $contacts=Contact::OrderBy('created_at','DESC')->with('status')->get();
+        $contacts=Contact::OrderBy('created_at','DESC')->with('status')->paginate(10);
         $configuration=Configuration::find(1);
             return view('admin.contact.index',compact('contacts','configuration'));
     }
@@ -82,7 +78,7 @@ class ContactController extends Controller
 
         $contact=Contact::find($id);
         Mail::to($contact->email,new AnswerMail($contact,$data['message']));
-        return redirect()->route('home');
+        return redirect()->back()->with('success','Mail envoyé avec succés!');
 
 
     }

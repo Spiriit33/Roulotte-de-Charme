@@ -10,7 +10,7 @@
     <?php $__env->stopSection(); ?>
 <?php $__env->startSection('right-content'); ?>
     <h4 class="mb-3">Gérer les contacts</h4>
-    <p>Ici, vous pouvez voir les différents messages envoyès par les visiteurs.</p>
+    <p>Ici, vous pouvez voir les différents messages envoyés par les visiteurs.</p>
      <div class="table-responsive">
          <table class="table table-striped">
              <tr>
@@ -21,6 +21,7 @@
                  <th>Statut</th>
                  <th>Action</th>
              </tr>
+                 <?php if($contacts->count() > 0): ?>
                  <?php $__currentLoopData = $contacts; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $contact): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                  <tr>
                      <td>#<?php echo e($contact->id); ?></td>
@@ -31,6 +32,11 @@
                      <td><a href="<?php echo e(route('show_contacts',['id'=>$contact->id])); ?>"><i class="fas fa-eye"></i> </a> <a href="<?php echo e(route('delete_contact',['id'=>$contact->id])); ?>"> <i class="fas fa-trash"></i> </a> </td>
              </tr>
                  <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+             <?php else: ?>
+                 <td colspan="6" class="text-center">Aucun messages.</td>
+             <?php endif; ?>
+            <?php echo $contacts->links(); ?>
+
          </table>
      </div>
     <?php $__env->stopSection(); ?>

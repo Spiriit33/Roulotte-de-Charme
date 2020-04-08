@@ -1,3 +1,6 @@
+<?php $__env->startSection('title'); ?>
+    Gestion des Sites Touristiques | La Roulotte de Charme
+    <?php $__env->stopSection(); ?>
 <?php $__env->startSection('breadcrumbs'); ?>
     <?php echo e(\DaveJamesMiller\Breadcrumbs\Facades\Breadcrumbs::render('manage_site_touristique')); ?>
 

@@ -1,3 +1,6 @@
+<?php $__env->startSection('title'); ?>
+    Administration | La Roulotte De Charme
+    <?php $__env->stopSection(); ?>
 <?php $__env->startSection('breadcrumbs'); ?>
     <?php echo e(\DaveJamesMiller\Breadcrumbs\Facades\Breadcrumbs::render('administration')); ?>
 
@@ -13,13 +16,51 @@
                     <form method="post">
                         <?php echo csrf_field(); ?>
                     <div class="form-group row justify-content-center">
-                        <input type="text" class="form-control form-control-sm col-md-8" placeholder="Nom d'utilisateur" name="username">
+                        <input type="text" class="form-control form-control-sm col-md-8 <?php $__errorArgs = ['username'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>" placeholder="Nom d'utilisateur" name="username">
+                        <?php $__errorArgs = ['username'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+                        <span class="invalid-feedback text-center" role="alert">
+                                        <strong><?php echo e($message); ?></strong>
+                                    </span>
+                        <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
                     </div>
                     <div class="form-group row justify-content-center">
-                        <input type="password" class="form-control form-control-sm col-md-8" placeholder="Mot de passe" name="password">
+                        <input type="password" class="form-control form-control-sm col-md-8 <?php $__errorArgs = ['password'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>" placeholder="Mot de passe" name="password">
+                        <?php $__errorArgs = ['password'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+                        <span class="invalid-feedback text-center" role="alert">
+                                        <strong><?php echo e($message); ?></strong>
+                                    </span>
+                        <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
                     </div>
                     <div class="form-group row justify-content-center">
-                        <button type="submit" class="btn btn-sm btn-primary">Se connecter</button>
+                        <button type="submit" class="btn btn-primary">Se connecter</button>
                     </div>
                     </form>
                 </div>

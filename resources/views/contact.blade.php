@@ -49,6 +49,17 @@
                                     </span>
                 @enderror
             </div>
+                @php
+                @endphp
+                <div class="form-group col-md-6 col-sm-6">
+                    {!! NoCaptcha::renderJs() !!}
+                {!! NoCaptcha::display() !!}
+                @if ($errors->has('g-recaptcha-response'))
+                    <span class="help-block">
+        <strong>{{ $errors->first('g-recaptcha-response') }}</strong>
+    </span>
+                @endif
+                </div>
             <div class="form-group row justify-content-center">
                 <button type="submit" class="btn btn-primary">Envoyer</button>
             </div>

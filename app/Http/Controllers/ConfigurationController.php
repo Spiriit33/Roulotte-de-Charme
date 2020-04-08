@@ -5,13 +5,11 @@ namespace App\Http\Controllers;
 use App\Configuration;
 use App\Http\Requests\RequestConfig;
 use App\SliderHome;
-use Illuminate\Http\Request;
-use app\Activite;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
-
 class ConfigurationController extends Controller
 {
-    public function store (RequestConfig $request)
+    public function store(RequestConfig $request)
     {
         $data = $request->validated();
         $titre = isset($data['titre']) ? $data['titre'] : null;
@@ -22,20 +20,21 @@ class ConfigurationController extends Controller
         $actu = isset($data['afficher_actu']) ? $data['afficher_actu'] : 0;
         $images = isset($data['images']) ? $data['images'] : null;
         $conf = Configuration::find(1);
-        $updateLogo = $logo!=null ? $logo : $conf->logo;
-        if (!isset($conf)) {
-            Configuration::create([
-                'title' => $titre,
-                'logo' => $logo,
-                'msg_home' => $acceuil,
-                'display_news' => $actu,
-                'email' => $email,
-                'telephone' => $telephone,
-            ]);
-        }
-        if (isset($conf)) {
-            $conf->update(['title'=>$titre,'telephone'=>$telephone,'email'=>$email,'msg_home'=>$acceuil,'display_news'=>$actu,'logo'=>$updateLogo]);
-        }
+        $updateLogo = $logo != null ? $logo : $conf->logo;
+        $password = isset($data['password']) ? $data['password'] : null;
+        $button = \request()->input('Change');
+        if (!isset($button)) {
+            if (!isset($conf)) {
+                Configuration::create(['title' => $titre,
+                    'logo' => $logo,
+                    'msg_home' => $acceuil,
+                    'display_news' => $actu,
+                    'email' => $email,
+                    'telephone' => $telephone,]);
+            }
+            if (isset($conf)) {
+                $conf->update(['title' => $titre, 'telephone' => $telephone, 'email' => $email, 'msg_home' => $acceuil, 'display_news' => $actu, 'logo' => $updateLogo]);
+            }
             if ($images) {
                 DB::table('slider_homes')->delete();
                 foreach ($images as $image) {
@@ -46,4 +45,9 @@ class ConfigurationController extends Controller
             }
             return redirect()->back()->with('success', 'Mis à jour avec succés!');
         }
+      else {
+                Auth::user()->update(['password' => bcrypt($data['new_password'])]);
+                return redirect()->back()->with('success', 'Mot de passe mis à jour avec succés!');
+        }
     }
+}
